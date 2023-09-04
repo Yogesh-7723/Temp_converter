@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>Temprature Convertor</title>
+        <style>
+            *
+            {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            
+            }
+            .container 
+            {
+                width:350px;
+                height: 220px;
+                position: relative;
+                background-color: black;
+                color: aliceblue;
+                border:2px solid black;
+                margin: 200px;
+                margin-left:450px ;
+                text-align: center;
+            }
+            .main 
+            {
+                font-size: 20px;
+                position: absolute;
+                top: 40px;
+                width: 350px;
+                height: 180px;
+                background-color: aquamarine;
+            
+            }
+            #temp
+            {
+                width: 200px;
+                font-size: 15px;
+                margin-top: 25px;
+                margin-left: 10px;
+            }
+            p 
+            {
+                background-color:darkgray;
+            
+            }
+            #slt 
+            {
+                margin-top: 15px;
+                font-size: 14px;
+                
+            }
+            i 
+            {
+                color: black;
+            }
+            .button 
+            {
+                font-size: 15px;
+                background-color:antiquewhite;
+                position: absolute;
+                top: 130;
+                left: 135;
+                padding: 5px;
+            }
+            img 
+            {
+                width: 35px;
+                text-align: center;
+            }
+            h1 
+            {
+                float: left;
+                text-align: end;
+                padding: 5px;
+                margin-left: 15px;
+            }
+            
+            #s
+            {
+                width: 150px;
+                height: 20px;
+                position: absolute;
+                top: 90;
+                left: 100;
+                border: 1px solid black;
+                color: black;
+            }
+
+        </style>
+        <script>
+            function show()
+            {
+            var cel=document.getElementById('temp').value;
+            var slt=document.getElementById('slt').value;
+            
+            if (slt == 'ceil')
+            {
+                var l=(cel-32) * (5/9);
+                document.getElementById('s').innerHTML=+l.toFixed(1);
+            
+            }
+            if (slt == 'Feh')
+            {
+                var l=(cel*9/5) + 32;
+                document.getElementById('s').innerHTML=+l.toFixed(1);
+                
+            }
+            
+            if (slt == '')
+            {
+                alert('please select convert type');
+                return false
+            }
+            };
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Temprature Convertor</h1><img src="thermometer.png">
+            <div class="main">
+                
+                <input type="text" name="temp" id="temp" placeholder="0">
+                <br><i>Convert into</i>
+                <select id="slt" name="slt">
+                    <option value="">-----</option>
+                    <option value="ceil">Cel</option>
+                    <option value="Feh">Feh</option>
+                </select>
+                <div id="s">result</div>
+                <input type="button" value="Convetor" onclick="return show()" class="button" >
+            </div>
+        </div>
+    </body>
+</html>
